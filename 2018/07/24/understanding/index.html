@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Hello, Learning">
 <meta property="og:description" content="A webhook POST to a database each time a particular event occurs on this website. Assuming a website receive about two of these requests per minute. Then, what’s the likelihood of waiting longer than">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-24T21:52:39.492Z">
+<meta property="og:updated_time" content="2018-07-25T04:41:31.859Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Poisson Processes Understanding">
 <meta name="twitter:description" content="A webhook POST to a database each time a particular event occurs on this website. Assuming a website receive about two of these requests per minute. Then, what’s the likelihood of waiting longer than">
@@ -382,7 +382,7 @@
                 
               
 
-              <time title="Created: 2018-07-24 11:38:24 / Modified: 14:52:39" itemprop="dateCreated datePublished" datetime="2018-07-24T11:38:24-07:00">2018-07-24</time>
+              <time title="Created: 2018-07-24 11:38:24 / Modified: 21:41:31" itemprop="dateCreated datePublished" datetime="2018-07-24T11:38:24-07:00">2018-07-24</time>
             
 
             
@@ -436,8 +436,8 @@
 <h2 id="Poisson-Distribution"><a href="#Poisson-Distribution" class="headerlink" title="Poisson Distribution"></a>Poisson Distribution</h2><p>If we let N(t) denote the number of events that occur between now and time t, then the probability that n events occur within the next t time-units, or $P(N(t)=n)$, is</p>
 <script type="math/tex; mode=display">P(N(t)=n) = \frac{(\lambda t)^n e^{-\lambda t}}{n!}</script><p>As mentioned earlier, we receive an average of two requests from this webhook per minute. Thus, the time-unit t is one minute and the rate λ is two. Knowing these, we can answer questions such as:</p>
 <ul>
-<li>What is the probability that we receive no requests in the next two minutes?<script type="math/tex; mode=display">P(N(2)=0) = \frac{(2*2)^0 e^{(-2*2)}}{0!} = e^{-4} \approx 0.0183</script></li>
-<li>What is the probability that we receive at least two requests in the next three minutes?<script type="math/tex; mode=display">P(N(3) \geq 2) = 1-P(N(3)=1)-P(N(3)=0) = 1-\frac{(2*3)^1 e^{(-2*3)}}{1!}-\frac{(2*3)^0 e^{(-2*3)}}{0!} \approx 0.9826</script></li>
+<li>What is the probability that we receive no requests in the next two minutes?<script type="math/tex; mode=display">P(N(2)=0) = \frac{(2 \times 2)^0 e^{(-2 \times 2)}}{0!} = e^{-4} \approx 0.0183</script></li>
+<li>What is the probability that we receive at least two requests in the next three minutes?<script type="math/tex; mode=display">P(N(3) \geq 2) = 1-P(N(3)=1)-P(N(3)=0) = 1-\frac{(2 \times 3)^1 e^{(-2 \times 3)}}{1!}-\frac{(2 \times 3)^0 e^{(-2 \times 3)}}{0!} \approx 0.9826</script></li>
 </ul>
 <h3 id="python-code"><a href="#python-code" class="headerlink" title="python code"></a>python code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">from math import pow, exp, factorial</span><br><span class="line"></span><br><span class="line">class Poisson:</span><br><span class="line"></span><br><span class="line">    def __init__(self, rate):</span><br><span class="line">        self.rate = rate</span><br><span class="line"></span><br><span class="line">    def prob_exactly(self, n, t):</span><br><span class="line">        rate = self.rate * t</span><br><span class="line">        return pow(rate, n) * exp(-rate) / factorial(n)</span><br><span class="line"></span><br><span class="line">    def prob_at_least(self, n, t):</span><br><span class="line">        complements = range(n)</span><br><span class="line">        total = 0.0</span><br><span class="line"></span><br><span class="line">        for c in complements:</span><br><span class="line">            p = self.prob_exactly(c, t)</span><br><span class="line">            total += p</span><br><span class="line"></span><br><span class="line">        return 1 - total</span><br><span class="line"></span><br><span class="line">    def prob_at_most(self, n, t):</span><br><span class="line">        return 1 - self.prob_at_least(n + 1, t)</span><br></pre></td></tr></table></figure>
 <p>For example, we can initialize a instance of Poisson with $\lambda = 2$:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pois = Poisson(2)</span><br></pre></td></tr></table></figure></p>
