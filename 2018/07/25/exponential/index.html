@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Hello, Learning">
 <meta property="og:description" content="Waiting Times Between Eventsexponential DistributionThe waiting times between events in a Poisson process are exponentially distributed. The exponential distribution can be derived from the Poisson di">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-25T22:25:08.070Z">
+<meta property="og:updated_time" content="2018-07-25T22:28:43.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Exponential Distribution">
 <meta name="twitter:description" content="Waiting Times Between Eventsexponential DistributionThe waiting times between events in a Poisson process are exponentially distributed. The exponential distribution can be derived from the Poisson di">
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="Created: 2018-07-25 15:04:46 / Modified: 15:25:08" itemprop="dateCreated datePublished" datetime="2018-07-25T15:04:46-07:00">2018-07-25</time>
+              <time title="Created: 2018-07-25 15:04:46 / Modified: 15:28:43" itemprop="dateCreated datePublished" datetime="2018-07-25T15:04:46-07:00">2018-07-25</time>
             
 
             
@@ -419,10 +419,10 @@
 <script type="math/tex; mode=display">P(X \geq t) = P(N(t)=0) = \frac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}}</script><p>We also know that the probability of X being less than or equal to t is the complement of X being greater than t:</p>
 <script type="math/tex; mode=display">P(X \leq t) = 1-P(X \leq t) = 1-e^{-\lambda t}}</script><p>Thus, the distribution function of the waiting times between events in a Poisson process is 1−e−λt. With this, and recalling that our time-unit t is one minute and our rate λ is two requests per minute, we can answer questions such as:</p>
 <ul>
-<li>What is the probability that the next request occurs within 15 seconds?<script type="math/tex; mode=display">P(X \leq 0.25)=1-e^{-\2 \times 0.25}} \approx 0.3935</script></li>
+<li>What is the probability that the next request occurs within 15 seconds?<script type="math/tex; mode=display">P(X \leq 0.25) = 1-e^{-\2 \times 0.25}} \approx 0.3935</script></li>
 <li>What is the probability that the next request is between 15 and 30 seconds from now?<script type="math/tex; mode=display">P(0.25 \leq X \leq 0.5) = P(X \leq 0.5)- P(X \leq 0.25) \approx 0.2387</script></li>
 </ul>
-<h3 id="Python-code"><a href="#Python-code" class="headerlink" title="Python code"></a>Python code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Exponential:</span><br><span class="line"></span><br><span class="line">    def __init__(self, rate):</span><br><span class="line">        self.rate = rate</span><br><span class="line"></span><br><span class="line">    def prob_less_than_or_equal(self, t):</span><br><span class="line">        rate = self.rate * t</span><br><span class="line">        return 1 - exp(-rate)</span><br><span class="line"></span><br><span class="line">    def prob_greater_than(self, t):</span><br><span class="line">        return 1 - self.prob_less_than_or_equal(t)</span><br><span class="line"></span><br><span class="line">    def prob_between(self, t1, t2):</span><br><span class="line">        p1 = self.prob_less_than_or_equal(t1)</span><br><span class="line">        p2 = self.prob_less_than_or_equal(t2)</span><br><span class="line"></span><br><span class="line">        return p2 - p1</span><br></pre></td></tr></table></figure>
+<h3 id="Python-code"><a href="#Python-code" class="headerlink" title="Python code"></a>Python code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from math import pow, exp, factorial</span><br><span class="line"></span><br><span class="line">class Exponential:</span><br><span class="line"></span><br><span class="line">    def __init__(self, rate):</span><br><span class="line">        self.rate = rate</span><br><span class="line"></span><br><span class="line">    def prob_less_than_or_equal(self, t):</span><br><span class="line">        rate = self.rate * t</span><br><span class="line">        return 1 - exp(-rate)</span><br><span class="line"></span><br><span class="line">    def prob_greater_than(self, t):</span><br><span class="line">        return 1 - self.prob_less_than_or_equal(t)</span><br><span class="line"></span><br><span class="line">    def prob_between(self, t1, t2):</span><br><span class="line">        p1 = self.prob_less_than_or_equal(t1)</span><br><span class="line">        p2 = self.prob_less_than_or_equal(t2)</span><br><span class="line"></span><br><span class="line">        return p2 - p1</span><br></pre></td></tr></table></figure>
 
       
     </div>
