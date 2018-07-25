@@ -369,7 +369,7 @@
                 
               
 
-              <time title="Created: 2018-07-25 15:04:46 / Modified: 15:21:21" itemprop="dateCreated datePublished" datetime="2018-07-25T15:04:46-07:00">2018-07-25</time>
+              <time title="Created: 2018-07-25 15:04:46 / Modified: 15:23:31" itemprop="dateCreated datePublished" datetime="2018-07-25T15:04:46-07:00">2018-07-25</time>
             
 
             
@@ -420,7 +420,7 @@
       
         
           
-            <h1 id="Waiting-Times-Between-Events"><a href="#Waiting-Times-Between-Events" class="headerlink" title="Waiting Times Between Events"></a>Waiting Times Between Events</h1><h2 id="exponential-Distribution"><a href="#exponential-Distribution" class="headerlink" title="exponential Distribution"></a>exponential Distribution</h2><p>The waiting times between events in a Poisson process are exponentially distributed. The exponential distribution can be derived from the Poisson distribution: Let X be the waiting time between now and the next event. <em>The probability that X is greater than t is identical to the probability that 0 events occur between now and time t</em>, which we already know:</p>
+            <h1 id="Waiting-Times-Between-Events"><a href="#Waiting-Times-Between-Events" class="headerlink" title="Waiting Times Between Events"></a>Waiting Times Between Events</h1><h2 id="exponential-Distribution"><a href="#exponential-Distribution" class="headerlink" title="exponential Distribution"></a>exponential Distribution</h2><p>The waiting times between events in a Poisson process are exponentially distributed. The exponential distribution can be derived from the Poisson distribution: Let X be the waiting time between now and the next event. <strong>The probability that X is greater than t is identical to the probability that 0 events occur between now and time t</strong>, which we already know:</p>
 <script type="math/tex; mode=display">P(X \geq t) = P(N(t)=0) = \frac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}}</script><p>We also know that the probability of X being less than or equal to t is the complement of X being greater than t:</p>
 <script type="math/tex; mode=display">P(X \leq t) = 1-P(X \leq t) = 1-e^{-\lambda t}}</script><p>Thus, the distribution function of the waiting times between events in a Poisson process is 1−e−λt. With this, and recalling that our time-unit t is one minute and our rate λ is two requests per minute, we can answer questions such as:</p>
 <ul>
