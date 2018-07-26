@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Hello, Learning">
 <meta property="og:description" content="Backward Propagation AlgorithmThe backpropagation algorithm is essential for training large neural networks quickly.  Activation function: non-linear function. eg. sigmoid, ReLu. Error function: commo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-26T20:50:10.451Z">
+<meta property="og:updated_time" content="2018-07-26T20:53:46.997Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Backward Propagation Algorithm">
 <meta name="twitter:description" content="Backward Propagation AlgorithmThe backpropagation algorithm is essential for training large neural networks quickly.  Activation function: non-linear function. eg. sigmoid, ReLu. Error function: commo">
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="Created: 2018-07-26 09:50:46 / Modified: 13:50:10" itemprop="dateCreated datePublished" datetime="2018-07-26T09:50:46-07:00">2018-07-26</time>
+              <time title="Created: 2018-07-26 09:50:46 / Modified: 13:53:46" itemprop="dateCreated datePublished" datetime="2018-07-26T09:50:46-07:00">2018-07-26</time>
             
 
             
@@ -424,7 +424,7 @@
 <script type="math/tex; mode=display">x_j = \sum_{i\in in(j)} w_{ij}y_i + b_j</script><p>Then we update the output of the nodes in the first hidden layer. For this we use the activation function $f(x)$</p>
 <script type="math/tex; mode=display">y = f(x)</script><p>Using these 2 formulas we propagate for the rest of the network and get the final output of the network.</p>
 <h2 id="Error-derivative"><a href="#Error-derivative" class="headerlink" title="Error derivative"></a>Error derivative</h2><p>The backpropagation algorithm decides how much to update each weight of the network after comparing the predicted output with the desired output for a particular example. For this, we need to compute how the error changes with respect to each weight $ \frac{dE}{dw_{ij}} $,<br>Once we have the error derivatives, we can update the weights using a simple update rule:</p>
-<script type="math/tex; mode=display">w_{ij} = w_{ij} -\alpha \frac{dE}{dw_{ij}}</script><p>where $\alpha$ is a positive constant, referred to as the learning rate, which we need to fine-tune empirically.<br>[Note] The update rule is very simple: if the error goes down when the weight increases ($ {\frac{dE}{dw<em>{ij}}} \leq 0 $), then increase the weight, otherwise if the error goes up when the weight increases ($ \frac{dE}{dw</em>{ij}} \geq 0 $), then decrease the weight.</p>
+<script type="math/tex; mode=display">w_{ij} = w_{ij} -\alpha \frac{dE}{dw_{ij}}</script><p>where $\alpha$ is a positive constant, referred to as the learning rate, which we need to fine-tune empirically.<br>[Note] The update rule is very simple: if the error goes down when the weight increases $ {\frac{dE}{dw<em>{ij}}} \leq 0 $, then increase the weight, otherwise if the error goes up when the weight increases $ \frac{dE}{dw</em>{ij}} \geq 0 $, then decrease the weight.</p>
 <h2 id="Additional-derivatives"><a href="#Additional-derivatives" class="headerlink" title="Additional derivatives"></a>Additional derivatives</h2><p>To help compute $ \frac{dE}{dw_{ij}} $, we additionally store for each node two more derivatives: how the error changes with:</p>
 <ul>
 <li>the total input of the node $ \frac{dE}{dx} $, and,</li>
