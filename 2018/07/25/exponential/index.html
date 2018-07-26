@@ -117,7 +117,7 @@
 <meta property="og:description" content="Beginner Pre-made Estimator and Dataset are first choices for beginner tf.estimator.Estimator contains lots of Estimators  Learning rate &amp;amp; Batch sizesBy reducing learning rate (for example, to 0.0">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://tonysssu.github.io/images/inputs_to_model_bridge.jpg">
-<meta property="og:updated_time" content="2018-07-26T05:14:31.677Z">
+<meta property="og:updated_time" content="2018-07-26T05:17:54.597Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow Learning">
 <meta name="twitter:description" content="Beginner Pre-made Estimator and Dataset are first choices for beginner tf.estimator.Estimator contains lots of Estimators  Learning rate &amp;amp; Batch sizesBy reducing learning rate (for example, to 0.0">
@@ -368,7 +368,7 @@
                 
               
 
-              <time title="Created: 2018-07-25 15:04:46 / Modified: 22:14:31" itemprop="dateCreated datePublished" datetime="2018-07-25T15:04:46-07:00">2018-07-25</time>
+              <time title="Created: 2018-07-25 15:04:46 / Modified: 22:17:54" itemprop="dateCreated datePublished" datetime="2018-07-25T15:04:46-07:00">2018-07-25</time>
             
 
             
@@ -442,14 +442,14 @@
 <li>Model complexity as a <em>function of the total number of features</em> with <em>nonzero weights</em>.  ———<strong>For sparsity</strong></li>
 </ul>
 <h3 id="For-simplicity"><a href="#For-simplicity" class="headerlink" title="For simplicity"></a>For simplicity</h3><ol>
-<li>L1 regularization</li>
+<li>L2 regularization</li>
 <li>multiplying its value by a scalar known as <em>lambda</em> (also called the <em>regularization rate</em>)</li>
-<li>lambda value is too high, your model will be simple; lambda value is too low, your model will be more complex, and you run the risk of /overfitting/ your data</li>
+<li>lambda value is too high, your model will be simple; lambda value is too low, your model will be more complex, and you run the risk of <em>overfitting</em> your data</li>
 </ol>
 <h3 id="For-sparsity"><a href="#For-sparsity" class="headerlink" title="For sparsity"></a>For sparsity</h3><ol>
 <li>L1 Regularization</li>
-<li>L1 penalizes |/weight/|</li>
-<li>The derivative of L1 is /k/ (a constant, whose value is independent of weight).</li>
+<li>L1 penalizes <em>weight</em></li>
+<li>The derivative of L1 is <em>k</em> (a constant, whose value is independent of weight).</li>
 </ol>
 <h2 id="Embedding"><a href="#Embedding" class="headerlink" title="Embedding"></a>Embedding</h2><p>Embeddings: Translating to a Lower-Dimensional Space<br>Original tensor is sparse, not efficient, so that needs embedding</p>
 <h2 id="Create-input-functions"><a href="#Create-input-functions" class="headerlink" title="Create input functions"></a>Create input functions</h2><ol>
@@ -494,6 +494,7 @@
 <li>Dropout Regularization</li>
 </ul>
 <h3 id="Normalize-the-Features-Using-Linear-Scaling"><a href="#Normalize-the-Features-Using-Linear-Scaling" class="headerlink" title="Normalize the Features Using Linear Scaling"></a>Normalize the Features Using Linear Scaling</h3><p>Linear Scaling<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def linear_scale(series):</span><br><span class="line">  min_val = series.min()</span><br><span class="line">  max_val = series.max()</span><br><span class="line">  scale = (max_val - min_val) / 2.0</span><br><span class="line">  return series.apply(lambda x:((x - min_val) / scale) - 1.0)</span><br></pre></td></tr></table></figure></p>
+<p>Continue…</p>
 
       
     </div>
