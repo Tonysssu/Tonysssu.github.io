@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Hello, Learning">
 <meta property="og:description" content="Backward Propagation AlgorithmThe backpropagation algorithm is essential for training large neural networks quickly.  Activation function: non-linear function. eg. sigmoid, ReLu. Error function: commo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-26T18:44:52.889Z">
+<meta property="og:updated_time" content="2018-07-26T20:48:43.556Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Backward Propagation Algorithm">
 <meta name="twitter:description" content="Backward Propagation AlgorithmThe backpropagation algorithm is essential for training large neural networks quickly.  Activation function: non-linear function. eg. sigmoid, ReLu. Error function: commo">
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="Created: 2018-07-26 09:50:46 / Modified: 11:44:52" itemprop="dateCreated datePublished" datetime="2018-07-26T09:50:46-07:00">2018-07-26</time>
+              <time title="Created: 2018-07-26 09:50:46 / Modified: 13:48:43" itemprop="dateCreated datePublished" datetime="2018-07-26T09:50:46-07:00">2018-07-26</time>
             
 
             
@@ -418,7 +418,7 @@
         <h1 id="Backward-Propagation-Algorithm"><a href="#Backward-Propagation-Algorithm" class="headerlink" title="Backward Propagation Algorithm"></a>Backward Propagation Algorithm</h1><p>The backpropagation algorithm is essential for training large neural networks quickly.</p>
 <ul>
 <li>Activation function: non-linear function. eg. sigmoid, ReLu.</li>
-<li>Error function: commonly using $ {1\over 2}{|y_o - y_t|}^2 $<br>[note]y_o denotes Output y, y_t denotes Target y <a id="more"></a></li>
+<li>Error function: commonly using $ {1\over 2}{|y_o - y_t|}^2 $<br>[note]$y_o$ denotes Output y, $y_t$ denotes Target y <a id="more"></a></li>
 </ul>
 <h2 id="Forward-propagation"><a href="#Forward-propagation" class="headerlink" title="Forward propagation"></a>Forward propagation</h2><p>We begin by taking an input example $ (x_i,y_t) $ and updating the input layer of the network.For consistency, we consider the input to be like any other node but without an activation function so its output is equal to its input, i.e. $ y_1 = x_i $.<br>Now, we update the first hidden layer. We take the output y of the nodes in the previous layer and use the weights to compute the input x of the nodes in the next layer.</p>
 <script type="math/tex; mode=display">x_j = \sum_{i\in in(j)} w_{ij}y_i + b_j</script><p>Then we update the output of the nodes in the first hidden layer. For this we use the activation function $f(x)$</p>
