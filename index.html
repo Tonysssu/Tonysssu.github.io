@@ -369,7 +369,7 @@
                 
               
 
-              <time title="Created: 2018-07-26 09:50:46 / Modified: 11:40:07" itemprop="dateCreated datePublished" datetime="2018-07-26T09:50:46-07:00">2018-07-26</time>
+              <time title="Created: 2018-07-26 09:50:46 / Modified: 11:44:52" itemprop="dateCreated datePublished" datetime="2018-07-26T09:50:46-07:00">2018-07-26</time>
             
 
             
@@ -419,30 +419,17 @@
 
       
         
-          
-            <h1 id="Backward-Propagation-Algorithm"><a href="#Backward-Propagation-Algorithm" class="headerlink" title="Backward Propagation Algorithm"></a>Backward Propagation Algorithm</h1><p>The backpropagation algorithm is essential for training large neural networks quickly.</p>
+          <h1 id="Backward-Propagation-Algorithm"><a href="#Backward-Propagation-Algorithm" class="headerlink" title="Backward Propagation Algorithm"></a>Backward Propagation Algorithm</h1><p>The backpropagation algorithm is essential for training large neural networks quickly.</p>
 <ul>
 <li>Activation function: non-linear function. eg. sigmoid, ReLu.</li>
-<li>Error function: commonly using $ {1\over 2}{|y_o - y_t|}^2 $<br>[note]y_o denotes Output y, y_t denotes Target y</li>
-</ul>
-<h2 id="Forward-propagation"><a href="#Forward-propagation" class="headerlink" title="Forward propagation"></a>Forward propagation</h2><p>We begin by taking an input example $ (x_i,y_t) $ and updating the input layer of the network.For consistency, we consider the input to be like any other node but without an activation function so its output is equal to its input, i.e. $ y_1 = x_i $.<br>Now, we update the first hidden layer. We take the output y of the nodes in the previous layer and use the weights to compute the input x of the nodes in the next layer.</p>
-<script type="math/tex; mode=display">x_j = \sum_{i\in in(j)} w_{ij}y_i + b_j</script><p>Then we update the output of the nodes in the first hidden layer. For this we use the activation function $f(x)$</p>
-<script type="math/tex; mode=display">y = f(x)</script><p>Using these 2 formulas we propagate for the rest of the network and get the final output of the network.</p>
-<h2 id="Error-derivative"><a href="#Error-derivative" class="headerlink" title="Error derivative"></a>Error derivative</h2><p>The backpropagation algorithm decides how much to update each weight of the network after comparing the predicted output with the desired output for a particular example. For this, we need to compute how the error changes with respect to each weight $ \frac{dE}{dw_{ij}} $,<br>Once we have the error derivatives, we can update the weights using a simple update rule:</p>
-<script type="math/tex; mode=display">w_{ij} = w_{ij} -\alpha \frac{dE}{dw_{ij}}</script><p>where $\alpha$ is a positive constant, referred to as the learning rate, which we need to fine-tune empirically.<br>[Note] The update rule is very simple: if the error goes down when the weight increases ($ {\frac{dE}{dw<em>{ij}}} \leq 0 $), then increase the weight, otherwise if the error goes up when the weight increases ($ \frac{dE}{dw</em>{ij}} \geq 0 $), then decrease the weight.</p>
-<h2 id="Additional-derivatives"><a href="#Additional-derivatives" class="headerlink" title="Additional derivatives"></a>Additional derivatives</h2><p>To help compute $ \frac{dE}{dw_{ij}} $, we additionally store for each node two more derivatives: how the error changes with:</p>
-<ul>
-<li>the total input of the node $ \frac{dE}{dx} $, and,</li>
-<li>the output of the node $ \frac{dE}{dy} $</li>
-</ul>
-<h2 id="Back-propagation"><a href="#Back-propagation" class="headerlink" title="Back propagation"></a>Back propagation</h2><p>Let’s begin backpropagating the error derivatives. Since we have the predicted output of this particular input example, we can compute how the error changes with that output. Given our error function $ {1\over 2}{|y_o - y_t|}^2 $ we have:</p>
-<script type="math/tex; mode=display">\frac{\partial E}{\partial y_o} = y_o - y_t</script><p>Now that we have $ \frac{dE}{dy} $ we can get $ \frac{dE}{dx} $ using the chain rule.</p>
-<script type="math/tex; mode=display">\frac{\partial E}{\partial x} = \frac{dy}{dx} \frac{\partial E}{\partial x} = \frac{df(x)}{dx} \frac{\partial E}{\partial x}</script><p>where $ \frac{df(x)}{dx}=f(x)(1−f(x)) $ when f(x) is the Sigmoid activation function.</p>
-<p>As soon as we have the error derivative with respect to the total input of a node, we can get the error derivative with respect to the weights coming into that node.</p>
-<script type="math/tex; mode=display">\frac{\partial E}{\partial w_{ij}} = \frac{\partial x_{ij}}{\partial w_{ij}} \frac{\partial E}{\partial x_{ij}} = y_i \frac{\partial E}{\partial x_{ij}}</script><p>And using the chain rule, we can also get $ \frac{\partial E}{\partial y} $ from the previous layer. We have made a full circle.</p>
-<script type="math/tex; mode=display">\frac{\partial E}{\partial y_i} = \sum_{j\in out(i)} \frac{\partial x_j}{\partial y_i} \frac{\partial E}{\partial x_j} = \sum_{j\in out(i)} w_{ij} \frac{\partial E}{\partial x_j}</script><p>All that is left to do is repeat the previous three formulas until we have computed all the error derivatives.</p>
-
-          
+<li>Error function: commonly using $ {1\over 2}{|y_o - y_t|}^2 $<br>[note]y_o denotes Output y, y_t denotes Target y
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/07/26/backward/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
