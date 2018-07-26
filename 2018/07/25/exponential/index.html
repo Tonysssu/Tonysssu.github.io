@@ -108,18 +108,20 @@
 
 
 
-  <meta name="description" content="Waiting Times Between Eventsexponential DistributionThe waiting times between events in a Poisson process are exponentially distributed. The exponential distribution can be derived from the Poisson di">
-<meta name="keywords" content="Statistic">
+  <meta name="description" content="Beginner Pre-made Estimator and Dataset are first choices for beginner tf.estimator.Estimator contains lots of Estimators  Learning rate &amp;amp; Batch sizesBy reducing learning rate (for example, to 0.0">
+<meta name="keywords" content="TensorFlow">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Exponential Distribution">
+<meta property="og:title" content="TensorFlow Learning">
 <meta property="og:url" content="https://tonysssu.github.io/2018/07/25/exponential/index.html">
 <meta property="og:site_name" content="Hello, Learning">
-<meta property="og:description" content="Waiting Times Between Eventsexponential DistributionThe waiting times between events in a Poisson process are exponentially distributed. The exponential distribution can be derived from the Poisson di">
+<meta property="og:description" content="Beginner Pre-made Estimator and Dataset are first choices for beginner tf.estimator.Estimator contains lots of Estimators  Learning rate &amp;amp; Batch sizesBy reducing learning rate (for example, to 0.0">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-25T22:35:43.450Z">
+<meta property="og:image" content="https://tonysssu.github.io/images/inputs_to_model_bridge.jpg">
+<meta property="og:updated_time" content="2018-07-26T05:14:31.677Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Exponential Distribution">
-<meta name="twitter:description" content="Waiting Times Between Eventsexponential DistributionThe waiting times between events in a Poisson process are exponentially distributed. The exponential distribution can be derived from the Poisson di">
+<meta name="twitter:title" content="TensorFlow Learning">
+<meta name="twitter:description" content="Beginner Pre-made Estimator and Dataset are first choices for beginner tf.estimator.Estimator contains lots of Estimators  Learning rate &amp;amp; Batch sizesBy reducing learning rate (for example, to 0.0">
+<meta name="twitter:image" content="https://tonysssu.github.io/images/inputs_to_model_bridge.jpg">
 
 
 
@@ -136,7 +138,7 @@
   };
 </script>
 
-  <title>Exponential Distribution | Hello, Learning</title>
+  <title>TensorFlow Learning | Hello, Learning</title>
   
 
 
@@ -341,7 +343,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Exponential Distribution
+          <h1 class="post-title" itemprop="name headline">TensorFlow Learning
               
             
           </h1>
@@ -366,7 +368,7 @@
                 
               
 
-              <time title="Created: 2018-07-25 15:04:46 / Modified: 15:35:43" itemprop="dateCreated datePublished" datetime="2018-07-25T15:04:46-07:00">2018-07-25</time>
+              <time title="Created: 2018-07-25 15:04:46 / Modified: 22:14:31" itemprop="dateCreated datePublished" datetime="2018-07-25T15:04:46-07:00">2018-07-25</time>
             
 
             
@@ -384,7 +386,7 @@
 
           
           
-             <span id="/2018/07/25/exponential/" class="leancloud_visitors" data-flag-title="Exponential Distribution">
+             <span id="/2018/07/25/exponential/" class="leancloud_visitors" data-flag-title="TensorFlow Learning">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -415,14 +417,83 @@
       
 
       
-        <h1 id="Waiting-Times-Between-Events"><a href="#Waiting-Times-Between-Events" class="headerlink" title="Waiting Times Between Events"></a>Waiting Times Between Events</h1><h2 id="exponential-Distribution"><a href="#exponential-Distribution" class="headerlink" title="exponential Distribution"></a>exponential Distribution</h2><p>The waiting times between events in a Poisson process are exponentially distributed. The exponential distribution can be derived from the Poisson distribution: Let X be the waiting time between now and the next event.<a id="more"></a> <strong>The probability that X is greater than t is identical to the probability that 0 events occur between now and time t</strong>, which we already know:</p>
-<script type="math/tex; mode=display">P(X \geq t) = P(N(t)=0) = \frac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}</script><p>We also know that the probability of X being less than or equal to t is the complement of X being greater than t:</p>
-<script type="math/tex; mode=display">P(X \leq t) = 1-P(X \geq t) = 1-e^{-\lambda t}</script><p>Thus, the distribution function of the waiting times between events in a Poisson process is 1−e−λt. With this, and recalling that our time-unit t is one minute and our rate λ is two requests per minute, we can answer questions such as:</p>
-<ul>
-<li>What is the probability that the next request occurs within 15 seconds?<script type="math/tex; mode=display">P(X \leq 0.25) = 1-e^{-2 \times 0.25} \approx 0.3935</script></li>
-<li>What is the probability that the next request is between 15 and 30 seconds from now?<script type="math/tex; mode=display">P(0.25 \leq X \leq 0.5) = P(X \leq 0.5)- P(X \leq 0.25) \approx 0.2387</script></li>
+        <h1 id="Beginner"><a href="#Beginner" class="headerlink" title="Beginner"></a>Beginner</h1><ul>
+<li>Pre-made Estimator and Dataset are first choices for beginner</li>
+<li>tf.estimator.Estimator contains lots of Estimators</li>
 </ul>
-<h3 id="Python-code"><a href="#Python-code" class="headerlink" title="Python code"></a>Python code</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from math import pow, exp, factorial</span><br><span class="line"></span><br><span class="line">class Exponential:</span><br><span class="line"></span><br><span class="line">    def __init__(self, rate):</span><br><span class="line">        self.rate = rate</span><br><span class="line"></span><br><span class="line">    def prob_less_than_or_equal(self, t):</span><br><span class="line">        rate = self.rate * t</span><br><span class="line">        return 1 - exp(-rate)</span><br><span class="line"></span><br><span class="line">    def prob_greater_than(self, t):</span><br><span class="line">        return 1 - self.prob_less_than_or_equal(t)</span><br><span class="line"></span><br><span class="line">    def prob_between(self, t1, t2):</span><br><span class="line">        p1 = self.prob_less_than_or_equal(t1)</span><br><span class="line">        p2 = self.prob_less_than_or_equal(t2)</span><br><span class="line"></span><br><span class="line">        return p2 - p1</span><br></pre></td></tr></table></figure>
+<h2 id="Learning-rate-amp-Batch-sizes"><a href="#Learning-rate-amp-Batch-sizes" class="headerlink" title="Learning rate &amp; Batch sizes"></a>Learning rate &amp; Batch sizes</h2><p>By reducing learning rate (for example, to 0.001), test loss drops to a value much closer to Training loss.<br>In most runs, increasing Batch size does not influence Training loss or Test loss significantly. However, in a small percentage of runs, increasing Batch size to 20 or greater causes Test loss to drop slightly below Training loss. <a id="more"></a></p>
+<h2 id="Validation"><a href="#Validation" class="headerlink" title="Validation"></a>Validation</h2><ul>
+<li><em>Examine the Data</em>:/no scale or not clear/jump too quickly/not in reasonable range/</li>
+<li>Training test func &amp; validation test func</li>
+</ul>
+<h2 id="Feature-Crosses"><a href="#Feature-Crosses" class="headerlink" title="Feature Crosses"></a>Feature Crosses</h2><ul>
+<li>Improve a linear regression model with the addition of additional synthetic features (this is a continuation of the previous exercise)</li>
+<li>Use an input function to convert pandas DataFrame objects to Tensors and invoke the input function in fit() and predict() operations</li>
+<li>Use the FTRL optimization algorithm for model training</li>
+<li>Create new synthetic features through one-hot encoding, binning, and feature crosses</li>
+</ul>
+<h2 id="Bucketize"><a href="#Bucketize" class="headerlink" title="Bucketize"></a>Bucketize</h2><p>To define feature columns for bucketized features, instead of using numeric_column, we can use bucketized_column, which takes a numeric column as input and transforms it to a bucketized feature using the bucket boundaries specified in the boundardies argument.<br>The get_quantile_based_boundaries function calculates boundaries based on <em>quantiles</em>, so that each bucket contains an equal number of elements.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">def get_quantile_based_boundaries(feature_values, num_buckets):</span><br><span class="line">  boundaries = np.arange(1.0, num_buckets) / num_buckets</span><br><span class="line">  quantiles = feature_values.quantile(boundaries)</span><br><span class="line">  return [quantiles[q] for q in quantiles.keys()]</span><br><span class="line"></span><br><span class="line">##Or</span><br><span class="line">def get_quantile_based_buckets(feature_values, num_buckets):</span><br><span class="line">  quantiles = feature_values.quantile(</span><br><span class="line">    [(i+1.)/(num_buckets + 1.) for i in range(num_buckets)])</span><br><span class="line">  return [quantiles[q] for q in quantiles.keys()]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Divide households into 7 buckets.</span><br><span class="line">households = tf.feature_column.numeric_column(&quot;households&quot;)</span><br><span class="line">bucketized_households = tf.feature_column.bucketized_column(</span><br><span class="line">  households, boundaries=get_quantile_based_boundaries(</span><br><span class="line">    california_housing_dataframe[&quot;households&quot;], 7))</span><br><span class="line"></span><br><span class="line"># Divide longitude into 10 buckets.</span><br><span class="line">longitude = tf.feature_column.numeric_column(&quot;longitude&quot;)</span><br><span class="line">bucketized_longitude = tf.feature_column.bucketized_column(</span><br><span class="line">  longitude, boundaries=get_quantile_based_boundaries(</span><br><span class="line">    california_housing_dataframe[&quot;longitude&quot;], 10))</span><br></pre></td></tr></table></figure>
+<p>Currently, the feature columns API only supports discrete features for crosses. To cross two continuous values, like latitude or longitude, we can bucketize them.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">long_x_lat = tf.feature_column.crossed_column(</span><br><span class="line">  set([bucketized_longitude, bucketized_latitude]), hash_bucket_size=1000)</span><br></pre></td></tr></table></figure>
+<h2 id="Regularization"><a href="#Regularization" class="headerlink" title="Regularization"></a>Regularization</h2><p>The <strong>regularization term</strong>, which measures model complexity.</p>
+<ul>
+<li>Model complexity as a <em>function of the weights</em> of all the features in the model. ——— <strong>For simplicity</strong></li>
+<li>Model complexity as a <em>function of the total number of features</em> with <em>nonzero weights</em>.  ———<strong>For sparsity</strong></li>
+</ul>
+<h3 id="For-simplicity"><a href="#For-simplicity" class="headerlink" title="For simplicity"></a>For simplicity</h3><ol>
+<li>L1 regularization</li>
+<li>multiplying its value by a scalar known as <em>lambda</em> (also called the <em>regularization rate</em>)</li>
+<li>lambda value is too high, your model will be simple; lambda value is too low, your model will be more complex, and you run the risk of /overfitting/ your data</li>
+</ol>
+<h3 id="For-sparsity"><a href="#For-sparsity" class="headerlink" title="For sparsity"></a>For sparsity</h3><ol>
+<li>L1 Regularization</li>
+<li>L1 penalizes |/weight/|</li>
+<li>The derivative of L1 is /k/ (a constant, whose value is independent of weight).</li>
+</ol>
+<h2 id="Embedding"><a href="#Embedding" class="headerlink" title="Embedding"></a>Embedding</h2><p>Embeddings: Translating to a Lower-Dimensional Space<br>Original tensor is sparse, not efficient, so that needs embedding</p>
+<h2 id="Create-input-functions"><a href="#Create-input-functions" class="headerlink" title="Create input functions"></a>Create input functions</h2><ol>
+<li>create input functions to supply data for training, evaluating, and prediction.</li>
+<li>Input function returns a  <strong>tf.data.Dataset</strong> object which outputs the following <strong>two-element tuple</strong>:</li>
+</ol>
+<ul>
+<li>[<em>features</em>]  A Python <strong>dictionary</strong> in which:<ul>
+<li>Each key is the name of a feature.</li>
+<li>Each value is an array containing all of that feature’s values.</li>
+</ul>
+</li>
+<li>[<em>label</em>]  An <strong>array</strong> containing the values of the  [label] for every example.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def input_evaluation_set():</span><br><span class="line">    features = &#123;&apos;SepalLength&apos;: np.array([6.4, 5.0]),</span><br><span class="line">                &apos;SepalWidth&apos;:  np.array([2.8, 2.3]),</span><br><span class="line">                &apos;PetalLength&apos;: np.array([5.6, 3.3]),</span><br><span class="line">                &apos;PetalWidth&apos;:  np.array([2.2, 1.0])&#125;</span><br><span class="line">    labels = np.array([2, 1])</span><br><span class="line">    return features, labels</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/images/inputs_to_model_bridge.jpg" alt=""></p>
+<h3 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h3><ol>
+<li>Arguments：expecting an “array” can accept nearly anything that can be converted to an array with numpy.array. One exception is  <em>tuple</em> which, as we will see, has special meaning for Datasets.</li>
+<li><p>Slice：The array is sliced across the first dimension.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># Convert the inputs to a Dataset.</span><br><span class="line">dataset = tf.data.Dataset.from_tensor_slices((dict(features), labels))</span><br><span class="line">print(dataset)</span><br><span class="line"></span><br><span class="line">&lt;TensorSliceDataset</span><br><span class="line">    shapes: (</span><br><span class="line">        &#123;</span><br><span class="line">          SepalLength: (), PetalWidth: (),</span><br><span class="line">          PetalLength: (), SepalWidth: ()&#125;,</span><br><span class="line">        ()),</span><br><span class="line"></span><br><span class="line">    types: (</span><br><span class="line">        &#123;</span><br><span class="line">          SepalLength: tf.float64, PetalWidth: tf.float64,</span><br><span class="line">          PetalLength: tf.float64, SepalWidth: tf.float64&#125;,</span><br><span class="line">        tf.int64)&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Manipulation:shuffle/repeat/batch<br>The <a href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset#batch" target="_blank" rel="noopener">batch</a>  method collects a number of examples and stacks them, to create batches. This adds a dimension to their shape. The new dimension is added as the first dimension.</p>
+</li>
+<li>Return<br>At this point the Dataset contains (features_dict, labels) pairs. This is the format expected by the train and evaluate methods, so the input_fn returns the dataset.<br><strong>The labels can/should be omitted when using the predict method.</strong></li>
+</ol>
+<h2 id="Define-the-feature-columns"><a href="#Define-the-feature-columns" class="headerlink" title="Define the feature columns"></a>Define the feature columns</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">my_feature_columns = []</span><br><span class="line">for key in train_x.keys():</span><br><span class="line">my_feature_columns.append(tf.feature_column.numeric_column(key=key))</span><br></pre></td></tr></table></figure>
+<h2 id="Instantiate-an-estimator"><a href="#Instantiate-an-estimator" class="headerlink" title="Instantiate an estimator"></a>Instantiate an estimator</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Build a DNN with 2 hidden layers and 10 nodes in each hidden layer.</span><br><span class="line">classifier = tf.estimator.DNNClassifier(</span><br><span class="line">    feature_columns=my_feature_columns,</span><br><span class="line">    # Two hidden layers of 10 nodes each.</span><br><span class="line">    hidden_units=[10, 10],</span><br><span class="line">    # The model must choose between 3 classes.</span><br><span class="line">    n_classes=3)</span><br></pre></td></tr></table></figure>
+<h2 id="Train-Evaluate-and-Predict"><a href="#Train-Evaluate-and-Predict" class="headerlink" title="Train, Evaluate, and Predict"></a>Train, Evaluate, and Predict</h2><p>Now that we have an Estimator object, we can call methods to do the following:</p>
+<ul>
+<li>Train the model.</li>
+<li>Evaluate the trained model.</li>
+<li>Use the trained model to make predictions.</li>
+</ul>
+<h3 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h3><ul>
+<li>Use <em>hidden_units</em> to define the structure of the NN. The hidden_units argument provides a list of ints, where each int corresponds to a hidden layer and indicates the number of nodes in it. For example, consider the following assignment:<br>hidden_units=[3,10]</li>
+<li>By default, all hidden layers will use <em>ReLu activation</em> and will be fully connected.</li>
+</ul>
+<h3 id="Failure-Cases"><a href="#Failure-Cases" class="headerlink" title="Failure Cases"></a>Failure Cases</h3><ul>
+<li>Vanishing Gradients ——— using ReLU</li>
+<li>Exploding Gradients ———Batch normalization/lowering the learning rate</li>
+<li>Dead ReLU Units ———Lowering the learning rate can help keep ReLU units from dying.</li>
+<li>Dropout Regularization</li>
+</ul>
+<h3 id="Normalize-the-Features-Using-Linear-Scaling"><a href="#Normalize-the-Features-Using-Linear-Scaling" class="headerlink" title="Normalize the Features Using Linear Scaling"></a>Normalize the Features Using Linear Scaling</h3><p>Linear Scaling<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def linear_scale(series):</span><br><span class="line">  min_val = series.min()</span><br><span class="line">  max_val = series.max()</span><br><span class="line">  scale = (max_val - min_val) / 2.0</span><br><span class="line">  return series.apply(lambda x:((x - min_val) / scale) - 1.0)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -443,7 +514,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Statistic/" rel="tag"># Statistic</a>
+            <a href="/tags/TensorFlow/" rel="tag"># TensorFlow</a>
           
         </div>
       
@@ -551,7 +622,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -587,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Waiting-Times-Between-Events"><span class="nav-number">1.</span> <span class="nav-text">Waiting Times Between Events</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#exponential-Distribution"><span class="nav-number">1.1.</span> <span class="nav-text">exponential Distribution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-code"><span class="nav-number">1.1.1.</span> <span class="nav-text">Python code</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Beginner"><span class="nav-number">1.</span> <span class="nav-text">Beginner</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Learning-rate-amp-Batch-sizes"><span class="nav-number">1.1.</span> <span class="nav-text">Learning rate &amp; Batch sizes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Validation"><span class="nav-number">1.2.</span> <span class="nav-text">Validation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Feature-Crosses"><span class="nav-number">1.3.</span> <span class="nav-text">Feature Crosses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bucketize"><span class="nav-number">1.4.</span> <span class="nav-text">Bucketize</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regularization"><span class="nav-number">1.5.</span> <span class="nav-text">Regularization</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#For-simplicity"><span class="nav-number">1.5.1.</span> <span class="nav-text">For simplicity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#For-sparsity"><span class="nav-number">1.5.2.</span> <span class="nav-text">For sparsity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Embedding"><span class="nav-number">1.6.</span> <span class="nav-text">Embedding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-input-functions"><span class="nav-number">1.7.</span> <span class="nav-text">Create input functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Datasets"><span class="nav-number">1.7.1.</span> <span class="nav-text">Datasets</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Define-the-feature-columns"><span class="nav-number">1.8.</span> <span class="nav-text">Define the feature columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instantiate-an-estimator"><span class="nav-number">1.9.</span> <span class="nav-text">Instantiate an estimator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Train-Evaluate-and-Predict"><span class="nav-number">1.10.</span> <span class="nav-text">Train, Evaluate, and Predict</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Training"><span class="nav-number">1.10.1.</span> <span class="nav-text">Training</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Failure-Cases"><span class="nav-number">1.10.2.</span> <span class="nav-text">Failure Cases</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Normalize-the-Features-Using-Linear-Scaling"><span class="nav-number">1.10.3.</span> <span class="nav-text">Normalize the Features Using Linear Scaling</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
