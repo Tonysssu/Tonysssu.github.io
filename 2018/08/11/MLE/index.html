@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="A webhook POST to a database each time a particular event occurs on this website. Assuming a website receive about two of these requests per minute. Then, what’s the likelihood of waiting longer than">
-<meta name="keywords" content="Statistic">
+  <meta name="description" content="Logistic Regression and Maximum Likelihood Estimation.Linear regression and logistic regression are the two most commonly used algorithms in machine learning algorithms, which are used for prediction">
+<meta name="keywords" content="algorithm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Poisson Processes Understanding">
-<meta property="og:url" content="https://tonysssu.github.io/2018/07/24/understanding/index.html">
+<meta property="og:title" content="MLE">
+<meta property="og:url" content="https://tonysssu.github.io/2018/08/11/MLE/index.html">
 <meta property="og:site_name" content="Hello, Learning">
-<meta property="og:description" content="A webhook POST to a database each time a particular event occurs on this website. Assuming a website receive about two of these requests per minute. Then, what’s the likelihood of waiting longer than">
+<meta property="og:description" content="Logistic Regression and Maximum Likelihood Estimation.Linear regression and logistic regression are the two most commonly used algorithms in machine learning algorithms, which are used for prediction">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-26T05:23:45.294Z">
+<meta property="og:updated_time" content="2018-08-12T01:13:32.314Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Poisson Processes Understanding">
-<meta name="twitter:description" content="A webhook POST to a database each time a particular event occurs on this website. Assuming a website receive about two of these requests per minute. Then, what’s the likelihood of waiting longer than">
+<meta name="twitter:title" content="MLE">
+<meta name="twitter:description" content="Logistic Regression and Maximum Likelihood Estimation.Linear regression and logistic regression are the two most commonly used algorithms in machine learning algorithms, which are used for prediction">
 
 
 
 
 
 
-  <link rel="canonical" href="https://tonysssu.github.io/2018/07/24/understanding/"/>
+  <link rel="canonical" href="https://tonysssu.github.io/2018/08/11/MLE/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>Poisson Processes Understanding | Hello, Learning</title>
+  <title>MLE | Hello, Learning</title>
   
 
 
@@ -324,7 +324,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://tonysssu.github.io/2018/07/24/understanding/">
+    <link itemprop="mainEntityOfPage" href="https://tonysssu.github.io/2018/08/11/MLE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tony Su">
@@ -341,7 +341,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Poisson Processes Understanding
+          <h1 class="post-title" itemprop="name headline">MLE
               
             
           </h1>
@@ -366,7 +366,7 @@
                 
               
 
-              <time title="Created: 2018-07-24 11:38:24" itemprop="dateCreated datePublished" datetime="2018-07-24T11:38:24-07:00">2018-07-24</time>
+              <time title="Created: 2018-08-10 22:24:54" itemprop="dateCreated datePublished" datetime="2018-08-10T22:24:54-07:00">2018-08-10</time>
             
 
             
@@ -383,7 +383,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-07-25 22:23:45" itemprop="dateModified" datetime="2018-07-25T22:23:45-07:00">2018-07-25</time>
+                <time title="Modified: 2018-08-11 18:13:32" itemprop="dateModified" datetime="2018-08-11T18:13:32-07:00">2018-08-11</time>
               
             
           </span>
@@ -396,7 +396,7 @@
 
           
           
-             <span id="/2018/07/24/understanding/" class="leancloud_visitors" data-flag-title="Poisson Processes Understanding">
+             <span id="/2018/08/11/MLE/" class="leancloud_visitors" data-flag-title="MLE">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -427,26 +427,22 @@
       
 
       
-        <p>A webhook POST to a database each time a particular event occurs on this website. Assuming a website receive about two of these requests per minute. Then, what’s the likelihood of waiting longer than 2 minutes for the next request?</p>
-<h1 id="Waiting-Times-Between-Events"><a href="#Waiting-Times-Between-Events" class="headerlink" title="Waiting Times Between Events"></a>Waiting Times Between Events</h1><p>A Poisson process is any process where independent events occur at constant known rate, e.g. babies are born at a hospital at a rate of three per hour, or calls come into a call center at a rate of 10 per minute.<a id="more"></a></p>
-<h2 id="Poisson-Distribution"><a href="#Poisson-Distribution" class="headerlink" title="Poisson Distribution"></a>Poisson Distribution</h2><p>If we let N(t) denote the number of events that occur between now and time t, then the probability that n events occur within the next t time-units, or $P(N(t)=n)$, is</p>
-<script type="math/tex; mode=display">P(N(t)=n) = \frac{(\lambda t)^n e^{-\lambda t}}{n!}</script><p>As mentioned earlier, we receive an average of two requests from this webhook per minute. Thus, the time-unit t is one minute and the rate λ is two. Knowing these, we can answer questions such as:</p>
-<ul>
-<li>What is the probability that we receive no requests in the next two minutes?<script type="math/tex; mode=display">P(N(2)=0) = \frac{(2 \times 2)^0 e^{(-2 \times 2)}}{0!} = e^{-4} \approx 0.0183</script></li>
-<li>What is the probability that we receive at least two requests in the next three minutes?<script type="math/tex; mode=display">P(N(3) \geq 2) = 1-P(N(3)=1)-P(N(3)=0) = 1-\frac{(2 \times 3)^1 e^{(-2 \times 3)}}{1!}-\frac{(2 \times 3)^0 e^{(-2 \times 3)}}{0!} \approx 0.9826</script></li>
-</ul>
-<h3 id="python-code"><a href="#python-code" class="headerlink" title="python code"></a>python code</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> pow, exp, factorial</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">poisson</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, rate)</span>:</span></span><br><span class="line">        self.rate = rate</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pro_exactly</span><span class="params">(self, t, n)</span>:</span></span><br><span class="line">        rate = self.rate*t</span><br><span class="line">        <span class="keyword">return</span> pow(rate, n)*exp(-rate)/factorial(n)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pro_atleast</span><span class="params">(self, t, n)</span>:</span></span><br><span class="line">        p_total=<span class="number">1.0</span></span><br><span class="line">        rate = self.rate*t</span><br><span class="line">        <span class="keyword">for</span> event <span class="keyword">in</span> range(n):</span><br><span class="line">            p_total-=self.pro_exactly(t, event)</span><br><span class="line">        <span class="keyword">return</span> p_total</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pro_atmost</span><span class="params">(self, t, n)</span>:</span></span><br><span class="line">        p_ini = <span class="number">0.0</span></span><br><span class="line">        rate = self.rate*t</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> range(n+<span class="number">1</span>):</span><br><span class="line">            p_ini+=self.pro_exactly(t, c)</span><br><span class="line">        <span class="keyword">return</span> p_ini</span><br></pre></td></tr></table></figure>
-<p>For example, we can initialize a instance of Poisson with $\lambda = 2$:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pois = Poisson(<span class="number">2</span>)</span><br></pre></td></tr></table></figure></p>
-<p>The, the probability that exactly n = 0 events occur within t = 2 minutes:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pois.prob_exactly(<span class="number">2</span>, <span class="number">0</span>) = <span class="number">0.0183156</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="exponential-Distribution"><a href="#exponential-Distribution" class="headerlink" title="exponential Distribution"></a>exponential Distribution</h2><p>The waiting times between events in a Poisson process are exponentially distributed. The exponential distribution can be derived from the Poisson distribution: Let X be the waiting time between now and the next event.<strong>The probability that X is greater than t is identical to the probability that 0 events occur between now and time t</strong>, which we already know:</p>
-<script type="math/tex; mode=display">P(X \geq t) = P(N(t)=0) = \frac{(\lambda t)^0 e^{-\lambda t}}{0!} = e^{-\lambda t}</script><p>We also know that the probability of X being less than or equal to t is the complement of X being greater than t:</p>
-<script type="math/tex; mode=display">P(X \leq t) = 1-P(X \geq t) = 1-e^{-\lambda t}</script><p>Thus, the distribution function of the waiting times between events in a Poisson process is 1−e−λt. With this, and recalling that our time-unit t is one minute and our rate λ is two requests per minute, we can answer questions such as:</p>
-<ul>
-<li>What is the probability that the next request occurs within 15 seconds?<script type="math/tex; mode=display">P(X \leq 0.25) = 1-e^{-2 \times 0.25} \approx 0.3935</script></li>
-<li>What is the probability that the next request is between 15 and 30 seconds from now?<script type="math/tex; mode=display">P(0.25 \leq X \leq 0.5) = P(X \leq 0.5)- P(X \leq 0.25) \approx 0.2387</script></li>
-</ul>
-<h3 id="Python-code"><a href="#Python-code" class="headerlink" title="Python code"></a>Python code</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> pow, exp, factorial</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Exponential</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, rate)</span>:</span></span><br><span class="line">        self.rate = rate</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">prob_less_than_or_equal</span><span class="params">(self, t)</span>:</span></span><br><span class="line">        rate = self.rate * t</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> - exp(-rate)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">prob_greater_than</span><span class="params">(self, t)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> - self.prob_less_than_or_equal(t)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">prob_between</span><span class="params">(self, t1, t2)</span>:</span></span><br><span class="line">        p1 = self.prob_less_than_or_equal(t1)</span><br><span class="line">        p2 = self.prob_less_than_or_equal(t2)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> p2 - p1</span><br></pre></td></tr></table></figure>
-
+        <h1 id="Logistic-Regression-and-Maximum-Likelihood-Estimation"><a href="#Logistic-Regression-and-Maximum-Likelihood-Estimation" class="headerlink" title="Logistic Regression and Maximum Likelihood Estimation."></a>Logistic Regression and Maximum Likelihood Estimation.</h1><p>Linear regression and logistic regression are the two most commonly used algorithms in machine learning algorithms, which are used for prediction and classification, respectively, and belong to supervised learning.<br>In supervised learning, if the dependent variable is a finite number of discrete values, then the prediction problem is transformed into a classification problem. From this perspective, the classification problem can also be said to be a special case of the prediction problem.<a id="more"></a></p>
+<h2 id="Logistic-Regression-and-Sigmoid"><a href="#Logistic-Regression-and-Sigmoid" class="headerlink" title="Logistic Regression and Sigmoid"></a>Logistic Regression and Sigmoid</h2><p>For a classification task, such as determining whether a message is spam or not, we need to predict the classification result through the classifier: Yes (marked as 1) or No (marked as 0).<br>If we consider 0 as “Non-occurrence” and 1 is “Occurrence”, then we can understand the classification task as the probability P of the estimated event occurrence, and achieve the classification purpose by the probability of the event occurrence probability.<br>Therefore, we need to limit the prediction result to a value between 0 and 1. Obviously, if we still use the linear regression</p>
+<script type="math/tex; mode=display">p = f_{\theta}(x) = \theta^{T}x</script><p>as the classifier, the predicted value could be much larger than 1 or far less than 0, which does not meet our expectations.<br>Thus, logistic regression introduces a logistic function that defines the classifier output between [0, 1], and its general form can be expressed as $ f_{\theta}(x) = g(\theta^{T}x) $. So the question is, what kind of logistic function g(z) do we need to choose?</p>
+<p>It should be emphasized that the reason we do not choose linear regression is that linear regression does not guarantee that the range of predicted values lies between [0, 1]. So the easiest way to solve this problem is to remove the limit of the dependent variable’s (prediction result) range, so we need to do some transformation on the probability form.</p>
+<p>First, choose odds ratio instead of probability. The odds ratio is the ratio between the probability of occurrence and the probability of non-occurrence. It is recorded as $ odds = \frac{p}{1−p} $. Through this transformation, we can map any number between [0,1] to any real number between $ [0, \infty] $. However, the output of the linear regression can also be a negative number, we also need another step to map the numbers in $ [0, \infty] $ to the real number domain R;</p>
+<p>Second, in many nonlinear functions, the value range of the log function is the whole real number domain and monotonous, so we can calculate the logarithm of the odds ratio, which is</p>
+<script type="math/tex; mode=display">\eta = log(odds) = log \frac{p}{1−p} = logit(p)</script><p>After the above two steps, we can remove the restriction of the classification problem on the value range of the dependent variable. If the probability is equal to 0, then the odds ratio is 0 and the logit value goes to $ −\infty $; Conversely, if the probability is equal to 1, the odds ratio is $ \infty $, logit value goes to $ \infty $. Therefore, the logit function can map the probability value of the range [0, 1] to the entire real space. When the probability value is less than 0.5, the logit value is a negative number. Otherwise, the logit value is a positive number.</p>
+<p>In summary, we relaxed the limitation on the dependent variable value’s range of the classifier prediction. We can now use linear regression to linearly fit the one-to-one mapped probability value, which is  $ logit(p) = log \frac{p}{1−p} = \eta =f_{\theta}(x) = g(\theta^{T}x) $. Since the logit transform is a one-to-one mapping, there is an inverse of logit (antilogit), and we can find an analytical expression for the p-value:</p>
+<script type="math/tex; mode=display">p = \frac{e^{\theta^{T}x}}{1 + e^{\theta^{T}x}}</script><script type="math/tex; mode=display">1-p = \frac{1}{1 + e^{\theta^{T}x}}</script><p>The above formula is a general expression of logistic regression, and the logit transform used is generally recorded as a sigmoid function:  </p>
+<script type="math/tex; mode=display">g(x) = \frac{e^{\theta^{T}x}}{1 + e^{\theta^{T}x}}</script><h2 id="Maximum-Likelihood-Estimation"><a href="#Maximum-Likelihood-Estimation" class="headerlink" title="Maximum Likelihood Estimation"></a>Maximum Likelihood Estimation</h2><p>Through the analysis above, we can obtain the expression of logistic regression:</p>
+<script type="math/tex; mode=display">P(y=1|X)= \frac{e^{\theta^{T}x}}{1 + e^{\theta^{T}x}}</script><script type="math/tex; mode=display">P(y=0|X)= \frac{1}{1 + e^{\theta^{T}x}}</script><p>Where $ \theta $ is an unknown parameter.<br>Assuming we got a set of observations, the the current task becomes a problem of how to estimate the model parameters given a set of data and a model that need to be determined by this parameters.<br>The maximum likelihood estimation is exactly a method for estimating unknown parameters. The Maximum Likelihood Method is based on the estimation that the samples are independent of each other and the samples satisfy random sampling (which can represent the overall distribution).<br>The core idea of the method is that if the existing sample can represent the population, then the maximum likelihood estimation is to find a set of parameters that make it possible to have existing samples, that is, to statistically maximize the joint probability of all observed samples. And because the samples are independent of each other, the joint probability of all observed samples can be written as the product of the probability of occurrence of each sample, as follows:</p>
+<script type="math/tex; mode=display">\prod_{i=1}^m P(y^{(i)} = 1|x^{(i)})^{y^{(i)}} P(y^{(i)} = 0|x^{(i)})^{1-y^{(i)}}</script><p>We can see that, when the sample response variable is 1, the above equation is equal to $ P(y^{(i)} = 1|x^{(i)}) $; when the sample response variable is 0, the above equation is equal to $ P(y^{(i)} = 0|x^{(i)}) $, which is the product of the marginal distribution probabilities of all samples, and is often referred to as the Likelihood Function l(\theta).</p>
+<p>The goal of the maximum likelihood estimation is to find the combination of the parameters θ that maximizes the likelihood function $ l(\theta) $. In theory, we can use the gradient ascent algorithm to solve the maximum value of the objective function (likelihood function). However, the above formula is not a convex function and is a non-convex function in the domain.</p>
+<p>We know that linear regression can be solved by gradient descent algorithm because the cost function of linear regression (mean square error function) is a convex function, which is bowl-shaped, and the convex function has good properties (for the convex function, the local minimum point is As a global minimum point, we generally convert non-convex functions into convex functions for solving. Therefore, the maximum likelihood estimation uses a natural logarithmic transformation to convert the likelihood function into a log-likelihood function. The specific form is:</p>
+<script type="math/tex; mode=display">log(l(\theta)) = log(\prod_{i=1}^m P(y^{(i)} = 1|x^{(i)})^{y^{(i)}} P(y^{(i)} = 0|x^{(i)})^{1-y^{(i)}}) \\\\
+                      = \prod_{i=1}^m (y^{(i)}log(g(x)) + (1-y^{(i)})log(1-g(x)))</script>
       
     </div>
 
@@ -466,7 +462,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Statistic/" rel="tag"># Statistic</a>
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
           
         </div>
       
@@ -479,8 +475,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/23/First-Note-On-Hexo/" rel="next" title="First Note">
-                <i class="fa fa-chevron-left"></i> First Note
+              <a href="/2018/07/26/convex/" rel="next" title="Convex Optimization">
+                <i class="fa fa-chevron-left"></i> Convex Optimization
               </a>
             
           </div>
@@ -488,10 +484,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/25/exponential/" rel="prev" title="TensorFlow Learning">
-                TensorFlow Learning <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -622,7 +614,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Waiting-Times-Between-Events"><span class="nav-number">1.</span> <span class="nav-text">Waiting Times Between Events</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Poisson-Distribution"><span class="nav-number">1.1.</span> <span class="nav-text">Poisson Distribution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python-code"><span class="nav-number">1.1.1.</span> <span class="nav-text">python code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exponential-Distribution"><span class="nav-number">1.2.</span> <span class="nav-text">exponential Distribution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Python-code"><span class="nav-number">1.2.1.</span> <span class="nav-text">Python code</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Logistic-Regression-and-Maximum-Likelihood-Estimation"><span class="nav-number">1.</span> <span class="nav-text">Logistic Regression and Maximum Likelihood Estimation.</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Logistic-Regression-and-Sigmoid"><span class="nav-number">1.1.</span> <span class="nav-text">Logistic Regression and Sigmoid</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Maximum-Likelihood-Estimation"><span class="nav-number">1.2.</span> <span class="nav-text">Maximum Likelihood Estimation</span></a></li></ol></li></ol></div>
             
 
           </div>
